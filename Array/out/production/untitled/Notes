@@ -1,0 +1,4 @@
+How to write recurrence in 2D Array
+1 -> express in terms of (row,col)
+2 -> explore all paths
+3 -> Sum up all ways / Maximum Minimum
