@@ -45,6 +45,12 @@ public class ZigZag {
             flag=!flag;
             ans.add(l);
         }
+        ArrayList<Integer> arr = new ArrayList<>();
+        for (int i = 0; i < ans.size(); i++) {
+            for (int j = 0; j < ans.get(i).size(); j++) {
+                arr.add(ans.get(i).get(j));
+            }
+        }
         return ans;
     }
 }

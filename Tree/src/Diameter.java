@@ -28,4 +28,27 @@ public class Diameter {
         dia[0] = Math.max(dia[0],lh+rh);
         return 1+Math.max(lh,rh);
     }
+
+    static class Info{
+        int diam;
+        int ht;
+
+        public Info(int diam, int ht){
+            this.diam = diam;
+            this.ht = ht;
+        }
+    }
+
+    public static Info diameter(Node root){
+        if(root==null){
+            return new Info(0,0);
+        }
+        Info leftInfo = diameter(root.left);
+        Info rightInfo = diameter(root.right);
+        int dia = Math.max(Math.max(leftInfo.diam, rightInfo.diam), rightInfo.ht+ leftInfo.ht+1);
+        int ht = Math.max(rightInfo.ht, rightInfo.ht)+1;
+        return new Info(dia, ht);
+    }
 }
+
+
